@@ -1,3 +1,5 @@
-#MainCanvas {
-  border-color: black;
-  border-bottom-width: thin; }
+canvas {
+  border: thin;
+	border-color: black;
+	border-style: solid;
+}
