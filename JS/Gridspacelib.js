@@ -1,12 +1,12 @@
 const canvasid = "canvas"
-const gridsize = "248"
+const gridsize = "256"
 const canvas = document.getElementById(canvasid);
 const ctx = canvas.getContext("2d");
 var pixelsize = canvas.height / gridsize
-function fillpixel(x,y,col) {
+function fillpixel(x,y,col,sizee) {
 	let backcolor = ctx.fillStyle
 	ctx.fillStyle = col
-	ctx.fillRect(pixelsize*x, pixelsize*y, pixelsize, pixelsize);
+	ctx.fillRect(pixelsize*x, pixelsize*y, pixelsize*sizee, pixelsize*sizee);
 	ctx.fillStyle = backcolor
 	
 }
@@ -35,13 +35,13 @@ function sleep(milliseconds) {
 //for (let i = 0; i < gridsize; i++) {
 //	fillarea(i,i,i,i,rgbToHex(Math.floor(Math.random() * 255),Math.floor(Math.random() * 255),Math.floor(Math.random() * 255)))
 //}
+
 for (let i = 0; i < gridsize; i++) {
 
 	setTimeout(function () {   
-    fillarea(i*2,i*2,i*2,i*2,rgbToHex(2*i,Math.round(i/2),2*i))
-	fillarea(i*3,i*2,i*3,i*2,rgbToHex(2*i,Math.round(i/2),2*i))
-	fillarea(i*4,i*2,i*4,i*2,rgbToHex(2*i,Math.round(i/2),2*i))
-	fillarea(i*1,i*2,i*1,i*2,rgbToHex(2*i,Math.round(i/2),2*i))
+	fillpixel(Math.floor(Math.random() * gridsize),Math.floor(Math.random() * gridsize),rgbToHex(5*i+260,i,5*i+260),Math.floor(Math.random() * 30) )
+		console.log(rgbToHex(5*i,i,5*i)+" "+5*i+" "+i+" "+5*i)
+		
      }, i*25)
 
 }
